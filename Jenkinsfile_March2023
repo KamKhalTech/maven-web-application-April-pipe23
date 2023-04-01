@@ -1,7 +1,7 @@
 node{
 	def mavenHome = tool name: 'maven3.9.1'
  stage('1.CodeClone'){
-    git credentialsId: 'gitHubCredentials', url: 'https://github.com/LandmakTechnology/maven-web-application'
+    git credentialsId: 'gitHubCredentials', url: 'https://github.com/KamKhalTech/maven-web-application'
    }
  stage('2MavenBuild'){
    sh "${mavenHome}/bin/mvn package"
@@ -14,16 +14,16 @@ node{
  	 sh "${mavenHome}/bin/mvn deploy"
  }
    stage('5deploy2UAT'){
- 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
+ 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://3.145.167.62:8080/')], contextPath: null, war: 'target/*war'
  }
  stage('6Manualapproval'){
     sh "echo 'ready for review' "
-    timeout(time:5, unit:'HOURS') {
+    timeout(time:5, unit:'MINUTES') {
     input message: 'Application ready for deployment, Please review and approve'
       }
   }
     stage('7deploy2Prod'){
- 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
+ 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://3.145.167.62:8080/')], contextPath: null, war: 'target/*war'
  }
   stage('8emailNotify'){
   	emailext body: '''Hello Team,
