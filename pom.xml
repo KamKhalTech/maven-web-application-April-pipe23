@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.30.255:8081/repository/Benz2/-releases/</url>
+	      <url>http://18.222.122.240:8081/repository/Benz2/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.30.255:8081/repository/Lexus/-snapshots/</url>
+	      <name>Landmark Technologies Snapshot Nexus Repository</name>
+	      <url>http://18.222.122.240:8081/repository/Lexus/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
