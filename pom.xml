@@ -95,7 +95,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.222.122.240:8081/repository/Benz2/</url>
+	      <url>http://3.15.157.71:8081/repository/LexusRelease/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
