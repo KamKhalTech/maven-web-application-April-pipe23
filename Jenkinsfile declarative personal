@@ -38,7 +38,7 @@ stage('2TestBuild'){
    }
    stage('5deploy') {
     steps{
-        deploy adapters: [tomcat9(credentialsId: 'Tomcatcredentials', path: '', url: 'http://18.188.139.111:8080/')], contextPath: null, war: 'target/*.war'
+       // deploy adapters: [tomcat9(credentialsId: 'Tomcatcredentials', path: '', url: 'http://18.188.139.111:8080/')], contextPath: null, war: 'target/*.war'
         sh "echo Deployment completed"
   }
  }
